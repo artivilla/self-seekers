@@ -67,7 +67,7 @@ body {
   padding: 0;
   max-width: inherit;
   background: #1E1E1D;
-  cursor: url("images/arrow-pointer.svg"), auto;
+  cursor: url("assets/arrow-pointer.svg"), auto;
 }
 
 /* LAYOUT */
@@ -76,7 +76,7 @@ body {
 }
 .splash-screen::after {
   content: "";
-  background-image: url("images/bg-texture-white.png");
+  background-image: url("assets/bg-texture-white.png");
   background-size: auto;
   background-repeat: repeat-y;
   position: absolute;
@@ -107,7 +107,7 @@ video {
   flex-direction: column;
   position: fixed;
   /* cursor: s-resize; */
-  cursor: url("images/arrow-down.svg"), pointer;
+  cursor: url("assets/arrow-down.svg"), pointer;
 }
 header {
   background-color: #1E1E1D;
@@ -125,7 +125,7 @@ header {
   justify-content: space-between;
 }
 .logo-animated {
-  cursor: url("images/arrow-pointer.svg"), pointer;
+  cursor: url("assets/arrow-pointer.svg"), pointer;
 }
 img.static {
   width: 300px;
@@ -156,12 +156,12 @@ img.animated {
   color: #E0E0D8;
   opacity: 0.5;
   transition: 0.2s;
-  cursor: url("images/arrow-pointer.svg"), pointer;
+  cursor: url("assets/arrow-pointer.svg"), pointer;
 }
 .nav li a:hover {
   opacity: 1;
   text-decoration: none;
-  cursor: url("images/arrow-pointer.svg"), pointer;
+  cursor: url("assets/arrow-pointer.svg"), pointer;
 }
 .nav li a.active {
   opacity: 1;
@@ -175,11 +175,11 @@ img.animated {
   background-color: #1E1E1D;
   padding: 2% 0% 5% 0%;
   position: relative;
-  cursor: url("images/arrow-pointer.svg"), pointer;
+  cursor: url("assets/arrow-pointer.svg"), pointer;
 }
 .sec-streaming::after {
   content: "";
-  background-image: url("images/bg-texture-tan.png");
+  background-image: url("assets/bg-texture-tan.png");
   background-size: auto;
   background-repeat: repeat-y;
   position: absolute;
@@ -233,15 +233,15 @@ img.animated {
   transition: 0.2s;
   text-decoration: none;
   font-family: 'Courier New Bold', Courier, sans-serif, monospace;
-  cursor: url("images/arrow-pointer.svg"), pointer;
+  cursor: url("assets/arrow-pointer.svg"), pointer;
 }
 .platform-tile:hover {
   opacity: 1;
-  cursor: url("images/arrow-pointer.svg"), pointer;
+  cursor: url("assets/arrow-pointer.svg"), pointer;
 }
 .streaming-logo {
   width: 24px;
-  cursor: url("images/arrow-pointer.svg"), pointer;
+  cursor: url("assets/arrow-pointer.svg"), pointer;
 }
 .platform-name{
   color: #E0E0D8;
@@ -250,7 +250,7 @@ img.animated {
 }
 .play-button {
   width: 12px;
-  cursor: url("images/arrow-pointer.svg"), pointer;
+  cursor: url("assets/arrow-pointer.svg"), pointer;
 }
 .sec-about {
   background-color: #E0E0D8;
@@ -259,7 +259,7 @@ img.animated {
 }
 .sec-about::after {
   content: "";
-  background-image: url("images/bg-texture-white.png");
+  background-image: url("assets/bg-texture-white.png");
   background-size: auto;
   background-repeat: repeat-y;
   position: absolute;
@@ -286,7 +286,7 @@ img.animated {
 }
 .sec-lookbook::after {
   content: "";
-  background-image: url("images/bg-texture-tan.png");
+  background-image: url("assets/bg-texture-tan.png");
   background-size: auto;
   background-repeat: repeat-y;
   position: absolute;
@@ -359,7 +359,7 @@ footer {
   justify-content: space-between;
 }
 .social a {
-  cursor: url("images/arrow-pointer.svg"), auto;
+  cursor: url("assets/arrow-pointer.svg"), auto;
 }
 .inline-image {
   /* -moz-box-shadow: 0px 10px 12px -12px rgba(0, 0, 0, 0.8);  /* Firefox 3.5 - 3.6 */
@@ -370,7 +370,7 @@ footer {
 button {
   font-family: 'Courier New Bold', Courier, sans-serif, monospace;
   font-size: inherit;
-  cursor: url("images/arrow-pointer.svg"), pointer;
+  cursor: url("assets/arrow-pointer.svg"), pointer;
 }
 .image-footnote {
   font-size: 0.75em;
@@ -387,7 +387,7 @@ button {
 .read-more-button {
   border: none;
   padding: 0;
-  cursor: url("images/arrow-pointer.svg"), pointer;
+  cursor: url("assets/arrow-pointer.svg"), pointer;
   font-family: 'Courier New Bold', Courier, sans-serif, monospace;
   transition: 0.2s;
   font-size: 20px;
@@ -415,7 +415,7 @@ button {
   background-color: rgb(30,30,29);
   background-color: rgba(30,30,29,0.9);
   align-items: center;
-  cursor: url("images/close.svg"), pointer;
+  cursor: url("assets/close.svg"), pointer;
 }
 .w3-modal-content {
   margin: auto;
@@ -424,7 +424,7 @@ button {
   padding:0;
   outline:0;
   border-radius: 4px;
-  cursor: url("images/arrow-pointer.svg"), pointer;
+  cursor: url("assets/arrow-pointer.svg"), pointer;
 }
 .w3-button {
   color: #1E1E1D;
@@ -440,7 +440,7 @@ button {
   overflow: hidden;
   margin-top: 0.5em;
   text-align: center;
-  cursor: url("images/arrow-pointer.svg"), pointer;
+  cursor: url("assets/arrow-pointer.svg"), pointer;
   white-space: nowrap;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -812,7 +812,7 @@ button {
   .platform-tile {
     margin-bottom: 0.5em;
     padding: 0.5em;
-    cursor: url("images/arrow-pointer.svg"), pointer;
+    cursor: url("assets/arrow-pointer.svg"), pointer;
   }
   .cover-art {
     width: auto;
