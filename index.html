@@ -26,16 +26,20 @@
   <meta name="msapplication-TileColor" content="#b91d47">
   <meta name="theme-color" content="#ffffff">
   <!-- END FAVICON -->
-  <link rel="stylesheet" href="css/styles.css">
-  <link href="https://fonts.googleapis.com/css?family=Courier+Prime:400,400i,700,700i&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Courier+Prime:400,400i,700,700i&display=swap" />
+  <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/animations/scale.css" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script defer src="js/clipboard.min.js"></script>
+  <script src="https://unpkg.com/@popperjs/core@2"></script>
+  <script src="https://unpkg.com/tippy.js@6"></script>
+  <script src="https://unpkg.com/clipboard@2"></script>
+  <script defer src="js/main.js"></script>
 </head>
 
 <body>
   <!-- START SPLASH SCREEN -->
   <a href="#stream">
-    <div class="splash-screen">
+    <div id="splashScreen" class="splash-screen">
       <!-- <img src="assets/splash-screen-frame.png" style="width:100%; height:100vh; z-index:3;"> -->
       <video autoplay loop muted playsinline poster="assets/splash-bg.png" style="z-index:-1;">
         <source src="assets/splash-bg.mp4" type="video/mp4">
@@ -130,7 +134,7 @@
           <img src="assets/first-studio-setup.jpg" alt="First music production studio setup in Connecticut" style="width: 100%;" />
           <p class="image-footnote">My first studio setup in Connecticut, 2005</p>
         </span>
-        <span onclick="myFunction()" id="myBtn" class="read-more-button">Read more &darr;</span>
+        <span onclick="readMore()" id="readTogglerBtn" class="read-more-button">Read more &darr;</span>
       </div>
       <img class="section-bottom-tear" src="assets/section-bottom-tear-tan.png" style="top:100%;">
     </section>
@@ -144,12 +148,12 @@
           <h3>An identity &mdash; in the true sense of the word &mdash; can not be seen.</h3>
           <p>Identities are much more than our name or appearance; they're an intangible manifestion of our backgrounds, experiences, goals, and desires. <em>Who Am I?</em>, the visual facet of Self Seekers, utilizes imagery and typography in an attempt to visually express the notions of identity and anonymity. It is best viewed while listening to the album.</p>
           <!-- Trigger the modal with a button -->
-          <button onclick="document.getElementById('id01').style.display='flex'" class="w3-button">Check it out <span class="arrow-rotate-ne">&uarr;</span></button>
+          <button onclick="displayLookBook()" class="w3-button">Check it out <span class="arrow-rotate-ne">&uarr;</span></button>
           <!-- Modal -->
-          <div id="id01" class="w3-modal">
+          <div id="lookbookModal" class="w3-modal">
             <div class="w3-modal-content w3-animate-opacity">
               <div class="w3-container">
-                <!-- <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span> -->
+                <!-- <span onclick="document.getElementById('lookbookModal').style.display='none'" class="w3-button w3-display-topright">&times;</span> -->
                 <div class="w3-content w3-display-container">
                   <img class="mySlides" src="assets/lookbook/lookbook-spread-1.jpg" alt="Jeremy Ford / Self Seekers lookbook">
                   <img class="mySlides" src="assets/lookbook/lookbook-spread-2.jpg" alt="Jeremy Ford / Self Seekers lookbook">
@@ -193,136 +197,10 @@
         <a href="https://twitter.com/jeremyrford" target="_blank">Twitter</a>
         <a href="https://www.youtube.com/channel/UCWesfKAsZqszM_U-nMJPEZA" target="_blank">YouTube</a>
         <a href="https://www.dribbble.com/jeremyfordesign" target="_blank">Dribbble</a>
-        <a class="copy-email" data-clipboard-demo data-clipboard-action="copy" data-clipboard-text="jeremyfordmusic@gmail.com" aria-label="Email address copied to clipboard">Email</a>
+        <a id="copyEmail" data-clipboard-text="jeremyfordmusic@gmail.com" data-tippy-content="Email address copied to clipboard">Email</a>
         <a href="#">TOP &uarr;</a>
       </div>
     </div>
   </footer>
-
-  <!-- START JS SCRIPTS -->
-  <!-- Start read more -->
-  <script>
-    function myFunction() {
-      var dots = document.getElementById("dots");
-      var moreText = document.getElementById("more");
-      var btnText = document.getElementById("myBtn");
-
-      if (dots.style.display === "none") {
-        dots.style.display = "inline";
-        btnText.innerHTML = "Read more &darr;";
-        moreText.style.display = "none";
-      }
-      else {
-        dots.style.display = "none";
-        btnText.innerHTML = "Read less &uarr;";
-        btnText.style.display = "none"; // Remove this line to display 'Read less' button //
-        moreText.style.display = "inline";
-      }
-    }
-  </script>
-  <!-- End read more -->
-
-  <!-- Start splash fade out on scroll -->
-  <script type="text/javascript">
-    const checkpoint = 840;
-    window.addEventListener("scroll", () => {
-      const currentScroll = window.pageYOffset;
-      if (currentScroll <= checkpoint) {
-        opacity = 1 - currentScroll / checkpoint;
-      } else {
-        opacity = 0;
-      }
-      document.querySelector(".splash-screen").style.opacity = opacity;
-    });
-  </script>
-  <!-- End splash fade out on scroll -->
-
-  <!-- Start close modal by clicking outside -->
-  <script>
-    // Get the modal
-    var modal = document.getElementById('id01');
-
-    // When the user clicks anywhere outside of the modal, close it
-    window.onclick = function(event) {
-      if (event.target == modal) {
-        modal.style.display = "none";
-      }
-    }
-  </script>
-  <!-- End close modal by clicking outside -->
-
-  <!-- Start slideshow -->
-  <script>
-    var slideIndex = 1;
-    showDivs(slideIndex);
-
-    function plusDivs(n) {
-      showDivs(slideIndex += n);
-    }
-
-    function showDivs(n) {
-      var i;
-      var x = document.getElementsByClassName("mySlides");
-      if (n > x.length) {slideIndex = 1}
-      if (n < 1) {slideIndex = x.length}
-      for (i = 0; i < x.length; i++) {
-        x[i].style.display = "none";
-      }
-      x[slideIndex-1].style.display = "block";
-    }
-  </script>
-  <!-- End slideshow -->
-
-  <!-- Start active nav item on click -->
-  <script>
-    $(function() {
-      $('.nav li a').click(function() { // Whenever any nav li a is clicked
-      $('.nav li a').removeClass('active')
-      $(this).addClass('active'); // Flag it with a new class
-      });
-    });
-  </script>
-  <!-- End active nav item on click -->
-
-  <!-- Start active nav item on scroll [NOT WORKING YET] -->
-  <script>
-    window.addEventListener('DOMContentLoaded', () => {
-
-    	const observer = new IntersectionObserver(entries => {
-    		entries.forEach(entry => {
-    			const id = entry.target.getAttribute('id');
-    			if (entry.intersectionRatio > 0) {
-    				document.querySelector(`.nav li a[href="#${id}"]`).classList.add('active');
-    			} else {
-    				document.querySelector(`.nav li a[href="#${id}"]`).classList.remove('active');
-    			}
-    		});
-    	});
-    	// Track all sections that have an `id` applied
-    	document.querySelectorAll('section[id]').forEach((section) => {
-    		observer.observe(section);
-    	});
-
-    });
-  </script>
-  <!-- End active nav item on scroll -->
-
-  <!-- Start copy text to clipboard -->
-  <script>
-    new ClipboardJS('.copy-email');
-  </script>
-
-  <script>
-    var btns=document.querySelectorAll('.copy-email');for(var i=0;i<btns.length;i++){btns[i].addEventListener('mouseleave',clearTooltip);btns[i].addEventListener('blur',clearTooltip);}
-    function clearTooltip(e){e.currentTarget.setAttribute('class','copy-email');e.currentTarget.removeAttribute('aria-label');}
-    function showTooltip(elem,msg){elem.setAttribute('class','copy-email tooltipped tooltipped-s');elem.setAttribute('aria-label',msg);}
-    function fallbackMessage(action){var actionMsg='';var actionKey=(action==='cut'?'X':'C');if(/iPhone|iPad/i.test(navigator.userAgent)){actionMsg='No support :(';}
-    else if(/Mac/i.test(navigator.userAgent)){actionMsg='Press ⌘-'+actionKey+' to '+action;}
-    else{actionMsg='Press Ctrl-'+actionKey+' to '+action;}
-    return actionMsg;}
-  </script>
-  <!-- End copy text to clipboard -->
-
-  <!-- END JS SCRIPTS -->
 </body>
 </html>
