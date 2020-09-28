@@ -109,7 +109,7 @@ video {
   /* cursor: s-resize; */
   cursor: url("../assets/arrow-down.svg"), pointer;
 }
-header {
+.header {
   background-color: #1E1E1D;
   color: #E0E0D8;
   text-align: left;
@@ -117,6 +117,19 @@ header {
   top: 0;
   z-index: 3;
   height: auto;
+}
+.header::after {
+  content: "";
+  background-image: url("../assets/bg-texture-tan.png");
+  background-size: auto;
+  background-repeat: repeat-y;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0.2;
+  pointer-events: none;
 }
 .header-inner {
   padding: 1.4em 6em .2em 6em;
