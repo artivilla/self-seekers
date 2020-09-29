@@ -394,6 +394,10 @@ button {
   transform: rotate(45deg);
   display: inline-block;
 }
+.arrow-download {
+  margin-left: 10px;
+  display: inline-block;
+}
 
 /* READ MORE REVEAL */
 #more {display: none;}
