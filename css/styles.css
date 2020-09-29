@@ -322,23 +322,6 @@ img.animated {
   align-items: center;
   justify-content: space-between;
 }
-a.download-pdf:link {
-  color: #1E1E1D;
-  background-color: #E0E0D8;
-  text-decoration: none;
-  font-family: 'Courier New Bold', Courier, sans-serif, monospace;
-  transition: 0.2s;
-  padding: 0.5em;
-  border-radius: 4px;
-}
-a.download-pdf:visited {
-  color: #1E1E1D;
-}
-a.download-pdf:hover {
-  background-color: #92314F;
-  color: #FFFFFF;
-  transition: 0.2s;
-}
 footer {
   background-color: #1E1E1D;
   font-size: 14px;
@@ -395,7 +378,7 @@ button {
   display: inline-block;
 }
 .arrow-download {
-  margin-left: 10px;
+  transform: rotate(90deg);
   display: inline-block;
 }
 
@@ -448,6 +431,7 @@ button {
   background-color: #E0E0D8;
   text-decoration: none;
   font-family: 'Courier New Bold', Courier, sans-serif, monospace;
+  font-size: 20px;
   transition: 0.2s;
   padding: 0.5em 0.75em;
   border-radius: 4px;
@@ -455,7 +439,7 @@ button {
   display: inline-block;
   vertical-align: middle;
   overflow: hidden;
-  margin-top: 0.5em;
+  margin-top: 0.75em;
   text-align: center;
   cursor: url("../assets/arrow-pointer.svg"), pointer;
   white-space: nowrap;
