@@ -78,11 +78,10 @@ function navLinkHighlightsOnScroll() {
         });
     });
 
-    $(function () {
-        $('.nav li a').click(function () { // Whenever any nav li a is clicked
-            $('.nav li a').removeClass('active')
-            $(this).addClass('active'); // Flag it with a new class
-        });
+    const navElem = document.querySelector('.nav li a');
+    navElem.addEventListener('click', (event) => {
+        navElem.classList.remove('active');
+        event.target.classList.add('active');
     });
 }
 
@@ -98,4 +97,4 @@ var slideIndex = 1;
 fadeSplashOnScroll();
 setupLookBook();
 navLinkHighlightsOnScroll();
-triggerClipboard()
+triggerClipboard();
