@@ -801,6 +801,10 @@ button {
     flex-direction: column;
     padding: 1em;
   }
+  .streaming-links {
+    width: auto;
+    margin-top: 1em;
+  }
   .attribution {
     padding: 1em;
   }
@@ -816,14 +820,10 @@ button {
     cursor: url("../assets/arrow-pointer.svg"), pointer;
   }
   .cover-art {
-    width: auto;
+    width: 100%;
   }
   .splash-screen {
     display: none;
-  }
-  .streaming-links {
-    width: auto;
-    margin-top: 1em;
   }
   .social {
     display: block;
@@ -874,10 +874,13 @@ button {
     top: 99.8%;
   }
   header .section-bottom-tear {
-      top: 99%;
+    top: 99%;
     }
   .mySlides {
     height: 70vh;
+  }
+  .read-more-button {
+    width: 100%;
   }
 }
 
@@ -904,6 +907,23 @@ button {
   .mySlides {
     height: 75vh;
   }
+  .streaming-inner {
+    flex-direction: column;
+    padding: 2em;
+  }
+  .streaming-links {
+    width: 100%;
+    margin-top: 1em;
+  }
+  .platform-tile {
+    margin-bottom: 0.5em;
+  }
+  .read-more-button {
+    width: auto;
+  }
+  .cover-art {
+    width: 100%;
+  }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
@@ -922,6 +942,25 @@ button {
   }
   .mySlides {
     height: 92vh;
+  }
+  .streaming-links {
+    width: 100%;
+    margin-top: 0;
+  }
+  .platform-tile {
+    padding: 20px;
+    margin-bottom: 1em;
+    }
+  }
+  .streaming-inner {
+    flex-direction: column;
+    padding: 2em;
+  }
+  .read-more-button {
+    width: auto;
+  }
+  .cover-art {
+    width: 100%;
   }
 }
 
@@ -942,6 +981,24 @@ button {
   .mySlides {
     height: 92vh;
   }
+  .streaming-inner {
+    flex-direction: row;
+    padding: 2em 6em 0em 6em;
+  }
+  .streaming-links {
+    width: 48%;
+    margin-top: 0;
+  }
+  .cover-art {
+    width: 48%;
+  }
+  .platform-tile {
+    padding: 10px;
+    margin-bottom: 0px;
+  }
+  .read-more-button {
+    width: auto;
+  }
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
@@ -957,5 +1014,23 @@ button {
   }
   .mySlides {
     height: 92vh;
+  }
+  .platform-tile {
+    padding: 20px;
+    margin-bottom: 0px;
+  }
+  .cover-art {
+    width: 48%;
+  }
+  .streaming-inner {
+    flex-direction: row;
+    padding: 2em 6em 0em 6em;
+  }
+  .streaming-links {
+    width: 48%;
+    margin-top: 0;
+  }
+  .read-more-button {
+    width: auto;
   }
 }
