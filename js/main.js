@@ -11,7 +11,7 @@ function readMore() {
     else {
         dots.style.display = 'none';
         btnText.innerHTML = 'Read less &uarr;';
-        btnText.style.display = 'none'; // Remove this line to display 'Read less' button
+        btnText.style.display = 'none'; // display 'Read less' btn
         moreText.style.display = 'inline';
     }
 }
