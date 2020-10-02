@@ -205,15 +205,10 @@ img.animated {
 }
 .streaming-inner {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  padding: 2em 6em 0em 6em;
-  margin: 0 auto;
-}
-.cover-art {
-  width: 48%;
-  color: #ffffff;
-  line-height: 0;
-  position: relative;
+  /* padding: 2em 6em 0em 6em; */
+  padding: 1em;
 }
 .cover-art img {
   width: 100%;
@@ -227,17 +222,9 @@ img.animated {
 .attribution p{
   font-size: 1em;
 }
-.streaming-links {
-  display: flex;
-  width: 48%;
-  color: #FFFFFF;
-  background: #1E1E1D;
-  flex-direction: column;
-  justify-content: space-between;
-}
 .platform-tile {
   background-color: rgba(224,224,216,0.2);
-  padding: 20px;
+  padding: 10px;
   border-radius: 4px;
   text-align: center;
   opacity: 0.5;
@@ -247,6 +234,8 @@ img.animated {
   text-decoration: none;
   font-family: 'Courier New Bold', Courier, sans-serif, monospace;
   cursor: url("../assets/arrow-pointer.svg"), pointer;
+  margin-bottom: 0.5em;
+  padding: 0.5em;
 }
 .platform-tile:hover {
   opacity: 1;
@@ -503,10 +492,6 @@ button {
   .logo-large object {
     width: auto;
   }
-  .streaming-inner {
-    flex-direction: column;
-    padding: 1em;
-  }
   .attribution {
     padding: 1em;
   }
@@ -515,11 +500,6 @@ button {
     margin-top: 0px;
     text-align: center;
     font-size: 0.75em;
-  }
-  .platform-tile {
-    margin-bottom: 0.5em;
-    padding: 0.5em;
-    cursor: url("../assets/arrow-pointer.svg"), pointer;
   }
   .cover-art {
     width: auto;
@@ -663,5 +643,26 @@ button {
   }
   .mySlides {
     height: 92vh;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1136px and up) */
+@media only screen and (min-width: 1136px) {
+  .streaming-inner {
+    flex-direction: row;
+    padding: 3em;
+  }
+  .cover-art {
+    flex: 1;
+  }
+  .streaming-links {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0 1em;
+  }
+  .platform-tile {
+    padding: 20px;
   }
 }
