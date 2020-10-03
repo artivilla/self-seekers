@@ -34,7 +34,6 @@ h1, h2, h3, h4 {
 }
 h1 {
   font-size: 4em;
-  padding-left: 1.5em;
   margin-bottom: 0px;
   word-spacing: -1em;
 }
@@ -205,18 +204,18 @@ img.animated {
 }
 .streaming-inner {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  padding: 2em 6em 0em 6em;
-  margin: 0 auto;
 }
-.cover-art {
-  width: 48%;
-  color: #ffffff;
-  line-height: 0;
-  position: relative;
+.layout-inner {
+  padding: 1em;
+}
+.layout-inner-header {
+  padding: 0 1em;
 }
 .cover-art img {
   width: 100%;
+  min-width: 523px;
 }
 .attribution {
   padding: 1em 6em 0em 6em;
@@ -227,17 +226,9 @@ img.animated {
 .attribution p{
   font-size: 1em;
 }
-.streaming-links {
-  display: flex;
-  width: 48%;
-  color: #FFFFFF;
-  background: #1E1E1D;
-  flex-direction: column;
-  justify-content: space-between;
-}
 .platform-tile {
   background-color: rgba(224,224,216,0.2);
-  padding: 20px;
+  padding: 10px;
   border-radius: 4px;
   text-align: center;
   opacity: 0.5;
@@ -247,6 +238,8 @@ img.animated {
   text-decoration: none;
   font-family: 'Courier New Bold', Courier, sans-serif, monospace;
   cursor: url("../assets/arrow-pointer.svg"), pointer;
+  margin-bottom: 0.5em;
+  padding: 0.5em;
 }
 .platform-tile:hover {
   opacity: 1;
@@ -287,6 +280,9 @@ img.animated {
   padding: 2em;
   max-width: 700px;
   margin: 0 auto;
+}
+.offset-headline > h1 {
+  margin-left: -0.5em;
 }
 .sec-about-inner img {
   padding: 1.5em 0em 0.5em 0em;
@@ -490,300 +486,6 @@ button {
 .mySlides {
   height: 92vh;
 }
-/* START TOOLTIPS */
-.tooltipped {
-  position: relative;
-}
-
-// This is the tooltip bubble
-.tooltipped::after {
-  position: absolute;
-  z-index: 1000000;
-  display: none;
-  padding: $em-spacer-5 $em-spacer-6;
-  font: normal normal 11px/1.5 $body-font;
-  -webkit-font-smoothing: subpixel-antialiased;
-  color: $text-white;
-  text-align: center;
-  text-decoration: none;
-  text-shadow: none;
-  text-transform: none;
-  letter-spacing: normal;
-  word-wrap: break-word;
-  white-space: pre;
-  pointer-events: none;
-  content: attr(aria-label);
-  background: $bg-black;
-  border-radius: $border-radius;
-  opacity: 0;
-}
-
-// This is the tooltip arrow
-.tooltipped::before {
-  position: absolute;
-  z-index: 1000001;
-  display: none;
-  width: 0;
-  height: 0;
-  color: $text-black;
-  pointer-events: none;
-  content: "";
-  // stylelint-disable-next-line primer/borders
-  border: 6px $border-style transparent;
-  opacity: 0;
-}
-
-// delay animation for tooltip
-@keyframes tooltip-appear {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
-// This will indicate when we'll activate the tooltip
-.tooltipped:hover,
-.tooltipped:active,
-.tooltipped:focus {
-  &::before,
-  &::after {
-    display: inline-block;
-    text-decoration: none;
-    animation-name: tooltip-appear;
-    animation-duration: $tooltip-duration;
-    animation-fill-mode: forwards;
-    animation-timing-function: ease-in;
-    animation-delay: $tooltip-delay;
-  }
-}
-
-.tooltipped-no-delay:hover,
-.tooltipped-no-delay:active,
-.tooltipped-no-delay:focus {
-  &::before,
-  &::after {
-    animation-delay: 0s;
-  }
-}
-
-.tooltipped-multiline:hover,
-.tooltipped-multiline:active,
-.tooltipped-multiline:focus {
-  &::after {
-    display: table-cell;
-  }
-}
-
-// Tooltipped south
-.tooltipped-s,
-.tooltipped-se,
-.tooltipped-sw {
-  &::after {
-    top: 100%;
-    right: 50%;
-    // stylelint-disable-next-line primer/spacing
-    margin-top: 6px;
-  }
-
-  &::before {
-    top: auto;
-    right: 50%;
-    bottom: -7px;
-    // stylelint-disable-next-line primer/spacing
-    margin-right: -6px;
-    // stylelint-disable-next-line primer/borders
-    border-bottom-color: $bg-black;
-  }
-}
-
-.tooltipped-se {
-  &::after {
-    right: auto;
-    left: 50%;
-    margin-left: -$spacer-3;
-  }
-}
-
-.tooltipped-sw::after {
-  margin-right: -$spacer-3;
-}
-
-// Tooltips above the object
-.tooltipped-n,
-.tooltipped-ne,
-.tooltipped-nw {
-  &::after {
-    right: 50%;
-    bottom: 100%;
-    // stylelint-disable-next-line primer/spacing
-    margin-bottom: 6px;
-  }
-
-  &::before {
-    top: -7px;
-    right: 50%;
-    bottom: auto;
-    // stylelint-disable-next-line primer/spacing
-    margin-right: -6px;
-    // stylelint-disable-next-line primer/borders
-    border-top-color: $bg-black;
-  }
-}
-
-.tooltipped-ne {
-  &::after {
-    right: auto;
-    left: 50%;
-    margin-left: -$spacer-3;
-  }
-}
-
-.tooltipped-nw::after {
-  margin-right: -$spacer-3;
-}
-
-// Move the tooltip body to the center of the object.
-.tooltipped-s::after,
-.tooltipped-n::after {
-  transform: translateX(50%);
-}
-
-// Tooltipped to the left
-.tooltipped-w {
-  &::after {
-    right: 100%;
-    bottom: 50%;
-    // stylelint-disable-next-line primer/spacing
-    margin-right: 6px;
-    transform: translateY(50%);
-  }
-
-  &::before {
-    top: 50%;
-    bottom: 50%;
-    left: -7px;
-    // stylelint-disable-next-line primer/spacing
-    margin-top: -6px;
-    // stylelint-disable-next-line primer/borders
-    border-left-color: $bg-black;
-  }
-}
-
-// tooltipped to the right
-.tooltipped-e {
-  &::after {
-    bottom: 50%;
-    left: 100%;
-    // stylelint-disable-next-line primer/spacing
-    margin-left: 6px;
-    transform: translateY(50%);
-  }
-
-  &::before {
-    top: 50%;
-    right: -7px;
-    bottom: 50%;
-    // stylelint-disable-next-line primer/spacing
-    margin-top: -6px;
-    // stylelint-disable-next-line primer/borders
-    border-right-color: $bg-black;
-  }
-}
-
-// Tooltip align right and left
-.tooltipped-align-right-1,
-.tooltipped-align-right-2 {
-  &::after {
-    right: 0;
-    margin-right: 0;
-  }
-}
-
-.tooltipped-align-right-1 {
-  &::before {
-    right: 10px;
-  }
-}
-
-.tooltipped-align-right-2 {
-  &::before {
-    right: 15px;
-  }
-}
-
-.tooltipped-align-left-1,
-.tooltipped-align-left-2, {
-  &::after {
-    left: 0;
-    margin-left: 0;
-  }
-}
-
-.tooltipped-align-left-1 {
-  &::before {
-    left: 5px;
-  }
-}
-
-.tooltipped-align-left-2 {
-  &::before {
-    left: 10px;
-  }
-}
-
-// Multiline tooltips
-//
-// `.tooltipped-multiline` Add this class when you have long content.
-// The downside is you cannot preformat the text with newlines and `[w,e]`
-// are always `$tooltip-max-width` wide.
-.tooltipped-multiline {
-  &::after {
-    width: max-content;
-    max-width: $tooltip-max-width;
-    word-wrap: break-word;
-    white-space: pre-line;
-    border-collapse: separate;
-  }
-
-  &.tooltipped-s::after,
-  &.tooltipped-n::after {
-    right: auto;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
-  &.tooltipped-w::after,
-  &.tooltipped-e::after {
-    right: 100%;
-  }
-}
-
-@media screen and (min-width: 0\0) {
-  // IE11
-  .tooltipped-multiline::after {
-    width: $tooltip-max-width;
-  }
-}
-
-// Sticky tooltips
-//
-// Always show the tooltip.
-.tooltipped-sticky {
-  &::before,
-  &::after {
-    display: inline-block;
-  }
-
-  &.tooltipped-multiline {
-    &::after {
-      display: table-cell;
-    }
-  }
-}
-/* END TOOLTIPS */
 
 /* MEDIA QUERIES */
 /* Extra small devices (phones, 600px and down) */
@@ -797,10 +499,6 @@ button {
   .logo-large object {
     width: auto;
   }
-  .streaming-inner {
-    flex-direction: column;
-    padding: 1em;
-  }
   .attribution {
     padding: 1em;
   }
@@ -809,11 +507,6 @@ button {
     margin-top: 0px;
     text-align: center;
     font-size: 0.75em;
-  }
-  .platform-tile {
-    margin-bottom: 0.5em;
-    padding: 0.5em;
-    cursor: url("../assets/arrow-pointer.svg"), pointer;
   }
   .cover-art {
     width: auto;
@@ -957,5 +650,32 @@ button {
   }
   .mySlides {
     height: 92vh;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1136px and up) */
+@media only screen and (min-width: 1136px) {
+  .streaming-inner {
+    flex-direction: row;
+  }
+  .layout-inner {
+    padding: 2em 6em 0em 6em;
+  }
+  .layout-inner-header {
+    padding: 0 6em;
+  }
+  .cover-art {
+    flex: 1;
+    padding-right: 1em;
+  }
+  .streaming-links {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-left: 1em;
+  }
+  .platform-tile {
+    padding: 20px;
   }
 }
