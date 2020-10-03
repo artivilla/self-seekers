@@ -215,6 +215,7 @@ img.animated {
 }
 .cover-art img {
   width: 100%;
+  min-width: 523px;
 }
 .attribution {
   padding: 1em 6em 0em 6em;
