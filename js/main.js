@@ -93,8 +93,27 @@ function triggerClipboard() {
     tippy('[data-tippy-content]', { trigger: 'click' });
 }
 
+function crossFadeCoverArt() {
+    const elem = document.querySelector('.cover-art > img');
+    elem.addEventListener('mouseenter', function () {
+        const viewportWidth = window.innerWidth || document.documentElement.clientWidth ||
+        document.body.clientWidth;
+        if (viewportWidth > 1136) {
+            elem.setAttribute('src', 'assets/cover-art-back.png');
+        }
+    })
+    elem.addEventListener('mouseleave', function () {
+        const viewportWidth = window.innerWidth || document.documentElement.clientWidth ||
+            document.body.clientWidth;
+        if (viewportWidth > 1136) {
+            elem.setAttribute('src', 'assets/cover-art-front.png');
+        }
+    })
+}
+
 var slideIndex = 1;
 fadeSplashOnScroll();
 setupLookBook();
 navLinkHighlightsOnScroll();
 triggerClipboard();
+crossFadeCoverArt();
