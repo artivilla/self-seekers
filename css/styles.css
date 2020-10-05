@@ -215,7 +215,7 @@ img.animated {
 }
 .cover-art img {
   width: 100%;
-  min-width: 523px;
+  min-width: auto;
 }
 .attribution {
   padding: 1em 6em 0em 6em;
@@ -667,6 +667,9 @@ button {
   .cover-art {
     flex: 1;
     padding-right: 1em;
+  }
+  .cover-art {
+    min-width: 535px;
   }
   .streaming-links {
     flex: 1;
