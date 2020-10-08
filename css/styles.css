@@ -185,7 +185,7 @@ img.animated {
 }
 .sec-streaming {
   background-color: #1E1E1D;
-  padding: 2% 0% 5% 0%;
+  padding: 2% 0% 8% 0%;
   position: relative;
   cursor: url("../assets/arrow-pointer.svg"), pointer;
 }
@@ -228,6 +228,7 @@ img.animated {
 }
 .platform-tile {
   background-color: rgba(224,224,216,0.2);
+  max-height: 52px;
   padding: 10px;
   border-radius: 4px;
   text-align: center;
@@ -680,5 +681,9 @@ button {
   }
   .platform-tile {
     padding: 20px;
+    max-height: 74px;
+  }
+  .cover-art img {
+    height: 770px;
   }
 }
