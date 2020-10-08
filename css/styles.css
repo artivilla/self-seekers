@@ -34,8 +34,9 @@ h1, h2, h3, h4 {
 }
 h1 {
   font-size: 4em;
-  margin-bottom: 0px;
+  /* margin-bottom: 0px;  */
   word-spacing: -1em;
+  margin-top: 0;
 }
 h2 {
   font-size: 2em;
@@ -52,6 +53,9 @@ h5 {
 p {
   font-size: 20px;
   opacity: 65%;
+}
+::selection {
+  background-color: #93324F;
 }
 .caption {
   font-size: 12px;
@@ -262,7 +266,7 @@ img.animated {
 .sec-about {
   background-color: #E0E0D8;
   position: relative;
-  padding: 8% 0%;
+  padding: 10% 0%;
 }
 .sec-about::after {
   content: "";
@@ -292,7 +296,7 @@ img.animated {
 .sec-lookbook {
   background-color: #FFFFFF;
   position: relative;
-  padding: 8% 0% 0% 0%;
+  padding: 10% 0%;
 }
 .sec-lookbook::after {
   content: "";
@@ -313,11 +317,17 @@ img.animated {
   margin: 0 auto;
 }
 .lookbook-image {
-  padding-top: 8%;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
+}
+.sec-quote {
+  background-color: #93324F;
+}
+.sec-quote-inner {
+  padding: 10% 30%;
+  text-align: center;
 }
 footer {
   background-color: #1E1E1D;
