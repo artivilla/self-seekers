@@ -684,6 +684,6 @@ button {
     max-height: 74px;
   }
   .cover-art img {
-    height: 770px;
+    max-height: 770px;
   }
 }
