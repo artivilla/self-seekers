@@ -2,7 +2,6 @@
 /* from https://github.com/oxalorg/sakura */
 html {
   font-size: 62.5%;
-  /* font-family: 'Courier Prime', monospace; */
   font-family: 'Courier New', Courier, monospace, sans-serif;
   scroll-behavior: smooth;
 }
@@ -62,6 +61,10 @@ p {
   margin: 0;
   padding: 0;
   text-align: center;
+}
+.italicize {
+  font-style: italic;
+  font-weight: 400;
 }
 
 /* RESET LAYOUT AND ADD COLORS */
