@@ -361,8 +361,10 @@ footer {
   color: #E0E0D8;
 }
 .social {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  line-height: 3em;
+  margin: auto;
+  text-align: center;
 }
 .social a {
   cursor: url("../assets/arrow-pointer.svg"), auto;
@@ -532,9 +534,6 @@ button {
     width: auto;
     margin-top: 1em;
   }
-  .social {
-    display: block;
-  }
   .header-inner {
     display: block;
     padding: 1em;
@@ -550,14 +549,7 @@ button {
   .sec-lookbook-inner-text {
     padding: 1em;
   }
-  .social {
-    display: inline-grid;
-    line-height: 3em;
-  }
   .header-inner div {
-    text-align: center;
-  }
-  .contact {
     text-align: center;
   }
   video {
@@ -698,5 +690,9 @@ button {
   }
   .cover-art img {
     max-height: 770px;
+  }
+  .social {
+    display: flex;
+    justify-content: space-between;
   }
 }
