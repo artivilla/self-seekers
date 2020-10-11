@@ -57,35 +57,31 @@
 
 <body>
   <!-- START SPLASH SCREEN -->
-  <a href="#stream">
-    <div id="splashScreen" class="splash-screen">
-      <!-- <img src="assets/splash-screen-frame.png" style="width:100%; height:100vh; z-index:3;"> -->
-      <video autoplay loop muted playsinline poster="assets/splash-bg.png" style="z-index:-1;">
-        <source src="assets/splash-bg.mp4" type="video/mp4">
-        <source src="splash-bg.ogg" type="video/ogg">
-      </video>
-      <div class="splash-screen-inner">
-        <div class="logo-large">
-          <img src="assets/self-seekers-logo-splash.svg" alt="self-seekers-logo" />
-        </div>
+  <div id="splashScreen" class="splash-screen scrollTo" data-target="stream" data-offset="100">
+    <!-- <img src="assets/splash-screen-frame.png" style="width:100%; height:100vh; z-index:3;"> -->
+    <video autoplay loop muted playsinline poster="assets/splash-bg.png" style="z-index:-1;">
+      <source src="assets/splash-bg.mp4" type="video/mp4">
+      <source src="splash-bg.ogg" type="video/ogg">
+    </video>
+    <div class="splash-screen-inner">
+      <div class="logo-large">
+        <img src="assets/self-seekers-logo-splash.svg" alt="self-seekers-logo" />
       </div>
     </div>
-  </a>
+  </div>
   <!-- END SPLASH SCREEN -->
-  <header id="header" class="header">
+  <header class="header">
     <div class="header-inner">
-      <a href="#stream" class="logo-animated">
-        <div>
+      <div class="scrollTo logo-animated" data-target="stream">
           <!-- <object type="image/svg+xml" data="assets/self-seekers-logo.svg" style="width:300px;"></object> -->
           <img src="assets/logo-static.png" class="static">
           <img src="assets/logo-animated.gif" class="animated">
-        </div>
-      </a>
+      </div>
       <nav class="nav">
         <ul>
-          <li style="margin-right:20px;"><a href="#stream">STREAM</a></li>
-          <li style="margin-right:20px;"><a href="#about">ABOUT</a></li>
-          <li><a href="#lookbook">LOOKBOOK</a></li>
+          <li class="scrollTo" data-target="stream" data-offset="100">STREAM</li>
+          <li class="scrollTo" data-target="about">ABOUT</li>
+          <li class="scrollTo" data-target="lookbook">LOOKBOOK</li>
         </ul>
       </nav>
     </div>
@@ -94,7 +90,7 @@
 
   <main>
     <!-- START SECTION 1: COVER ART AND STREAM -->
-    <section class="sec-streaming" id="stream">
+    <section id="stream" class="sec-streaming">
       <div class="streaming-inner layout-inner">
         <div class="cover-art">
           <img src="assets/cover-art-front.png">
