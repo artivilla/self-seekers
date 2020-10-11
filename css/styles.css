@@ -167,6 +167,9 @@ img.animated {
   font-family: 'Courier New Bold', Courier, monospace, sans-serif;
   letter-spacing: 0.25em;
 }
+.nav li:not(:last-child) {
+  margin-right: 20px;
+}
 .nav li a {
   text-decoration: none;
   color: #E0E0D8;

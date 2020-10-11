@@ -111,9 +111,31 @@ function crossFadeCoverArt() {
     })
 }
 
+/* scrollToArea is a func to find all class="scrollTo" and use data-targets to route to matching Ids */
+/* data-offset (optional) used to adjust negative top margins */
+function scrollToArea() {
+    var links = document.querySelectorAll('.scrollTo');
+    for (let i of links) {
+        const elem = i.getAttribute("data-target");
+        if (elem !== '') {
+            i.addEventListener("click", handleButtonClick);
+        }
+    }
+    function handleButtonClick(e) {
+        const target = e.currentTarget.getAttribute("data-target");
+        const shiftOffset = e.currentTarget.getAttribute("data-offset");
+        const el = document.getElementById(target)
+        var offsetTop = el.offsetTop;
+        if (el) {
+            window.scroll({ top: offsetTop - shiftOffset, left: 0, behavior: 'smooth' });
+        }
+    }
+}
+
 var slideIndex = 1;
 fadeSplashOnScroll();
 setupLookBook();
-navLinkHighlightsOnScroll();
+// navLinkHighlightsOnScroll();
 triggerClipboard();
 crossFadeCoverArt();
+scrollToArea();
