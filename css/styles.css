@@ -500,6 +500,13 @@ button {
   height: 92vh;
 }
 
+.keyboard-helper {
+  position: relative;
+  height: 100%;
+  top: 20px;
+  left: 20px;
+}
+
 /* MEDIA QUERIES */
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
