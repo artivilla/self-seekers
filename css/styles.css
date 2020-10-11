@@ -135,10 +135,9 @@ video {
   pointer-events: none;
 }
 .header-inner {
-  padding: 1.4em 6em .2em 6em;
-  margin-bottom: 0;
-  display: flex;
-  justify-content: space-between;
+  display: block;
+  padding: 1em;
+  text-align: center;
 }
 .logo-animated {
   cursor: url("../assets/arrow-pointer.svg"), pointer;
@@ -534,10 +533,6 @@ button {
     width: auto;
     margin-top: 1em;
   }
-  .header-inner {
-    display: block;
-    padding: 1em;
-  }
   .nav ul {
     padding-left: 0;
     margin: 0 auto;
@@ -548,9 +543,6 @@ button {
   }
   .sec-lookbook-inner-text {
     padding: 1em;
-  }
-  .header-inner div {
-    text-align: center;
   }
   video {
     width: auto;
@@ -626,6 +618,12 @@ button {
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
+  .header-inner {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.4em 6em .2em 6em;
+    margin-bottom: 0;
+  }
   .inline-image {
     width: 33.33%;
   }
