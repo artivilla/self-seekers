@@ -34,9 +34,9 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-hyphens: auto;
   hyphens: auto;
 }
-/* h1, h2, h3, h4 {
+h1, h2, h3, h4 {
   font-family: inherit;
-} */
+}
 h1 {
   font-size: 4em;
   /* margin-bottom: 0px;  */
@@ -501,10 +501,25 @@ button {
 }
 
 .keyboard-helper {
-  position: relative;
+  position: absolute;
   height: 100%;
   top: 20px;
   left: 20px;
+}
+
+.close-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 30px;
+  color: white;
+  border: none;
+  background: none;
+  cursor: url("../assets/close.svg"), pointer;
+}
+
+.close-button:hover {
+  outline: none;
 }
 
 /* MEDIA QUERIES */

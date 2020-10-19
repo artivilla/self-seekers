@@ -30,15 +30,13 @@ function fadeSplashOnScroll() {
     });
 }
 
-/* Close lookbook modal by clicking outside the modal itself */
-var modal = document.getElementById('lookbookModal');
-function displayLookBook() {
-    modal.style.display = 'flex';
-    window.addEventListener('click', (event) => {
-        if (event.target === modal) {
-            modal.style.display = 'none';
-        }
-    });
+var lookbookModal = document.getElementById('lookbookModal');
+function closeLookbook() {
+    lookbookModal.style.display = 'none';
+}
+
+function displayLookbook() {
+    lookbookModal.style.display = 'flex';
 }
 
 function showDivs(n) {
