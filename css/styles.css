@@ -507,9 +507,13 @@ button {
 
 .keyboard-helper {
   position: absolute;
-  height: 100%;
   top: 20px;
   left: 20px;
+}
+
+.keyboard-helper img {
+  width: 100%;
+  height: auto;
 }
 
 .close-button {
