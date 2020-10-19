@@ -155,7 +155,7 @@ function hideDownloadInLookbook() {
         }
     }
     if (hasTouchScreen) {
-        lookbookDownload.style.display = 'inline';
+        lookbookDownload.style.display = 'none';
     }
 }
 
