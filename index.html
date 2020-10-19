@@ -30,6 +30,7 @@
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap" />
   <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/animations/scale.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script defer src="https://unpkg.com/@popperjs/core@2"></script>
   <script defer src="https://unpkg.com/tippy.js@6"></script>
   <script defer src="https://unpkg.com/clipboard@2"></script>
@@ -178,7 +179,7 @@
             <button class="close-button" onclick="closeLookbook()">Close</button>
             <div class="w3-modal-content w3-animate-opacity">
               <div class="w3-container">
-                <div class="w3-content w3-display-container">
+                <div class="lookbookSlides w3-content w3-display-container">
                   <img class="mySlides" src="assets/lookbook/lookbook-spread-1.jpg" alt="Jeremy Ford / Self Seekers lookbook">
                   <img class="mySlides" src="assets/lookbook/lookbook-spread-2.jpg" alt="Jeremy Ford / Self Seekers lookbook">
                   <img class="mySlides" src="assets/lookbook/lookbook-spread-3.jpg" alt="Jeremy Ford / Self Seekers lookbook">
@@ -231,5 +232,6 @@
       </div>
     </div>
   </footer>
+  <div class="cursor"></div>
 </body>
 </html>

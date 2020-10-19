@@ -30,13 +30,16 @@ function fadeSplashOnScroll() {
     });
 }
 
-var lookbookModal = document.getElementById('lookbookModal');
+const lookbookModal = document.getElementById('lookbookModal');
+const body = document.querySelector('body');
 function closeLookbook() {
     lookbookModal.style.display = 'none';
+    body.style.cursor = 'inherit'; 
 }
 
 function displayLookbook() {
     lookbookModal.style.display = 'flex';
+    body.style.cursor = 'none';
 }
 
 function showDivs(n) {
@@ -130,6 +133,38 @@ function scrollToArea() {
     }
 }
 
+function customCursor() {
+    const mouseCursor = document.querySelector('.cursor');
+    const closeBtn = document.querySelector('.close-button');
+    const lookbookSlides = document.querySelector('.lookbookSlides');
+    const viewportWidth = window.innerWidth || document.documentElement.clientWidth ||
+    document.body.clientWidth;
+    console.log(`customCursor -> viewportWidth`, viewportWidth);
+    window.addEventListener('mousemove', cursor);
+    function cursor(e) {
+        if (e.target === (lookbookModal || lookbookSlides)) {
+            mouseCursor.style.top = e.pageY + 'px';
+            mouseCursor.style.left = e.pageX + 'px';
+        }
+        if (e.target === closeBtn) {
+            mouseCursor.display = 'none';
+        }
+        if (viewportWidth / 2 - e.pageX > 1) {
+            mouseCursor.style.background = `url("assets/left-arrow.svg")`;
+        } else {
+            mouseCursor.style.background = `url("assets/right-arrow.svg")`;
+        }
+    }
+}
+
+function ready(fn) {
+    if (document.readyState != 'loading') {
+        fn();
+    } else {
+        document.addEventListener('DOMContentLoaded', fn);
+    }
+}
+
 var slideIndex = 1;
 fadeSplashOnScroll();
 setupLookBook();
@@ -137,3 +172,4 @@ setupLookBook();
 triggerClipboard();
 crossFadeCoverArt();
 scrollToArea();
+ready(customCursor);
