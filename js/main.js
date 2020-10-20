@@ -159,6 +159,20 @@ function hideDownloadInLookbook() {
     }
 }
 
+function revealShadow() {
+    let cssApplier;
+    window.addEventListener('load', () => {
+        rangy.init();
+        console.log(rangy);
+        cssApplier = rangy.createClassApplier('hiddenShadow', true); // true turns on normalization
+    });
+    const aboutSection = document.getElementById('about-inner');
+    aboutSection.addEventListener('mouseup', () => {
+        cssApplier.toggleSelection();
+    })
+    
+};
+
 var slideIndex = 1;
 fadeSplashOnScroll();
 setupLookBook();
@@ -167,3 +181,4 @@ triggerClipboard();
 crossFadeCoverArt();
 scrollToArea();
 hideDownloadInLookbook();
+revealShadow();
