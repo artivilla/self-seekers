@@ -79,7 +79,12 @@ button, a {
 
 /* LAYOUT */
 .splash-screen {
+  position: relative;
   height: 100vh;
+}
+
+.splash-screen video {
+  position: absolute;
 }
 .splash-screen::after {
   content: "";
@@ -103,7 +108,7 @@ video {
   left: 0;
 }
 .splash-screen-inner {
-  position: static;
+  position: absolute;
   height: 100vh;
   width: 100%;
   text-align: center;
