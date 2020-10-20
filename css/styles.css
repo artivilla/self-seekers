@@ -113,11 +113,9 @@ video {
   width: 100%;
   text-align: center;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  cursor: url("../assets/arrow-down.svg"), pointer;
-}
-.logo-large img {
   cursor: url("../assets/arrow-down.svg"), pointer;
 }
 .header {
