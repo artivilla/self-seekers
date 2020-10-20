@@ -5,12 +5,18 @@ html {
   font-family: 'Courier New', Courier, monospace, sans-serif;
   scroll-behavior: smooth;
 }
+* {
+  cursor: url("../assets/arrow-pointer.svg"), auto;
+}
 body {
   font-size: 1.8rem;
   line-height: 1.7;
-  margin: auto;
-  padding: 13px;
   text-rendering: optimizeLegibility;
+  margin: 0;
+  padding: 0;
+  max-width: inherit;
+  background: #1E1E1D;
+  cursor: url("../assets/arrow-pointer.svg"), auto;
 }
 html, body {
   min-height: 100%;
@@ -53,6 +59,10 @@ p {
   font-size: 20px;
   opacity: 65%;
 }
+button, a {
+  cursor: url("../assets/arrow-pointer.svg"), auto;
+}
+
 ::selection {
   background-color: #93324F;
 }
@@ -67,18 +77,14 @@ p {
   font-weight: 400;
 }
 
-/* RESET LAYOUT AND ADD COLORS */
-body {
-  margin: 0;
-  padding: 0;
-  max-width: inherit;
-  background: #1E1E1D;
-  cursor: url("../assets/arrow-pointer.svg"), auto;
-}
-
 /* LAYOUT */
 .splash-screen {
+  position: relative;
   height: 100vh;
+}
+
+.splash-screen video {
+  position: absolute;
 }
 .splash-screen::after {
   content: "";
@@ -102,17 +108,16 @@ video {
   left: 0;
 }
 .splash-screen-inner {
+  position: absolute;
   height: 100vh;
   width: 100%;
-  margin: 0 auto;
   text-align: center;
   display: flex;
-  align-items: center;
   justify-content: center;
-  position: relative;
-  flex-direction: column;
-  position: fixed;
-  /* cursor: s-resize; */
+  align-items: center;
+  cursor: url("../assets/arrow-down.svg"), pointer;
+}
+.logo-large img {
   cursor: url("../assets/arrow-down.svg"), pointer;
 }
 .header {
@@ -142,9 +147,6 @@ video {
   padding: 1em;
   text-align: center;
 }
-.logo-animated {
-  cursor: url("../assets/arrow-pointer.svg"), pointer;
-}
 img.static {
   width: 300px;
   background-color: #1E1E1D;
@@ -166,7 +168,6 @@ img.animated {
   padding: 0px;
   display: inline;
   font-size: 14px;
-  font-family: 'Courier New Bold', Courier, monospace, sans-serif;
   letter-spacing: 0.25em;
   text-transform: uppercase;
 }
@@ -178,12 +179,10 @@ img.animated {
   color: #E0E0D8;
   opacity: 0.5;
   transition: 0.2s;
-  cursor: url("../assets/arrow-pointer.svg"), pointer;
 }
 .nav li a:hover {
   opacity: 1;
   text-decoration: none;
-  cursor: url("../assets/arrow-pointer.svg"), pointer;
 }
 .nav li a.active {
   opacity: 1;
@@ -197,7 +196,6 @@ img.animated {
   background-color: #1E1E1D;
   padding: 2% 0% 8% 0%;
   position: relative;
-  cursor: url("../assets/arrow-pointer.svg"), pointer;
 }
 .sec-streaming::after {
   content: "";
@@ -254,20 +252,21 @@ img.animated {
 }
 .platform-tile:hover {
   opacity: 1;
-  cursor: url("../assets/arrow-pointer.svg"), pointer;
+  cursor: inherit;
+}
+.platform-tile svg {
+  cursor: inherit;
 }
 .streaming-logo {
   width: 24px;
-  cursor: url("../assets/arrow-pointer.svg"), pointer;
 }
-.platform-name{
+.platform-tile span {
   color: #E0E0D8;
   text-align: center;
   font-size: 20px;
 }
-.play-button {
+.platform-tile .play-button {
   width: 12px;
-  cursor: url("../assets/arrow-pointer.svg"), pointer;
 }
 .sec-about {
   background-color: #E0E0D8;
@@ -376,9 +375,6 @@ footer {
   margin: auto;
   text-align: center;
 }
-.social a {
-  cursor: url("../assets/arrow-pointer.svg"), auto;
-}
 .inline-image {
   /* -moz-box-shadow: 0px 10px 12px -12px rgba(0, 0, 0, 0.8);  /* Firefox 3.5 - 3.6 */
   /* -webkit-box-shadow: 0px 10px 12px -12px rgba(0, 0, 0, 0.8);  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
@@ -409,7 +405,6 @@ button {
 .read-more-button {
   border: none;
   padding: 0;
-  cursor: url("../assets/arrow-pointer.svg"), pointer;
   font-family: 'Courier New Bold', Courier, sans-serif, monospace;
   transition: 0.2s;
   font-size: 20px;
@@ -446,7 +441,6 @@ button {
   padding:0;
   outline:0;
   border-radius: 4px;
-  cursor: url("../assets/arrow-pointer.svg"), pointer;
 }
 .w3-button {
   color: #1E1E1D;
@@ -463,7 +457,6 @@ button {
   overflow: hidden;
   margin-top: 0.75em;
   text-align: center;
-  cursor: url("../assets/arrow-pointer.svg"), pointer;
   white-space: nowrap;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
