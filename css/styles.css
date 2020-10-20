@@ -5,12 +5,18 @@ html {
   font-family: 'Courier New', Courier, monospace, sans-serif;
   scroll-behavior: smooth;
 }
+* {
+  cursor: url("../assets/arrow-pointer.svg"), auto;
+}
 body {
   font-size: 1.8rem;
   line-height: 1.7;
-  margin: auto;
-  padding: 13px;
   text-rendering: optimizeLegibility;
+  margin: 0;
+  padding: 0;
+  max-width: inherit;
+  background: #1E1E1D;
+  cursor: url("../assets/arrow-pointer.svg"), auto;
 }
 html, body {
   min-height: 100%;
@@ -53,6 +59,10 @@ p {
   font-size: 20px;
   opacity: 65%;
 }
+button, a {
+  cursor: url("../assets/arrow-pointer.svg"), auto;
+}
+
 ::selection {
   background-color: #93324F;
 }
@@ -65,15 +75,6 @@ p {
 .italicize {
   font-style: italic;
   font-weight: 400;
-}
-
-/* RESET LAYOUT AND ADD COLORS */
-body {
-  margin: 0;
-  padding: 0;
-  max-width: inherit;
-  background: #1E1E1D;
-  cursor: url("../assets/arrow-pointer.svg"), auto;
 }
 
 /* LAYOUT */
@@ -102,15 +103,16 @@ video {
   left: 0;
 }
 .splash-screen-inner {
-  position: fixed;
+  position: static;
   height: 100vh;
   width: 100%;
-  margin: 0 auto;
   text-align: center;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  cursor: url("../assets/arrow-down.svg"), pointer;
+}
+.logo-large img {
   cursor: url("../assets/arrow-down.svg"), pointer;
 }
 .header {
@@ -139,9 +141,6 @@ video {
   display: block;
   padding: 1em;
   text-align: center;
-}
-.logo-animated {
-  cursor: url("../assets/arrow-pointer.svg"), pointer;
 }
 img.static {
   width: 300px;
@@ -373,9 +372,6 @@ footer {
   line-height: 3em;
   margin: auto;
   text-align: center;
-}
-.social a {
-  cursor: url("../assets/arrow-pointer.svg"), auto;
 }
 .inline-image {
   /* -moz-box-shadow: 0px 10px 12px -12px rgba(0, 0, 0, 0.8);  /* Firefox 3.5 - 3.6 */
