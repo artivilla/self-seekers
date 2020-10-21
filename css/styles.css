@@ -328,7 +328,7 @@ img.animated {
   justify-content: space-between;
 }
 .sec-quote {
-  background-color: #93324F;
+  background-color: #FFD178;
 }
 .sec-quote-inner {
   padding: 10%;
@@ -336,10 +336,10 @@ img.animated {
 }
 .sec-quote-inner h1 {
   margin: 0;
+  color: white;
 }
 .sec-quote-inner h2 {
   margin-top: 0;
-  color: white;
 }
 footer {
   background-color: #1E1E1D;
