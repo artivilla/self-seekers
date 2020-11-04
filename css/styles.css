@@ -34,9 +34,9 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-hyphens: auto;
   hyphens: auto;
 }
-/* h1, h2, h3, h4 {
+h1, h2, h3, h4 {
   font-family: inherit;
-} */
+}
 h1 {
   font-size: 4em;
   /* margin-bottom: 0px;  */
@@ -62,6 +62,14 @@ p {
 button, a {
   cursor: url("../assets/actions/arrow-pointer.svg"), auto;
 }
+video {
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
 
 ::selection {
   background-color: #93324F;
@@ -82,7 +90,6 @@ button, a {
   position: relative;
   height: 100vh;
 }
-
 .splash-screen video {
   position: absolute;
 }
@@ -98,14 +105,6 @@ button, a {
   left: 0;
   opacity: 0.4;
   pointer-events: none;
-}
-video {
-  object-fit: cover;
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  left: 0;
 }
 .splash-screen-inner {
   position: absolute;
@@ -319,7 +318,24 @@ img.animated {
   max-width: 700px;
   margin: 0 auto;
 }
-.lookbook-image {
+.sec-lookbook-overlay {
+  position: absolute;
+  z-index: -1;
+  /* display: none; */
+  height: 100vh;
+  width: 50%;
+}
+.sec-lookbook-overlay.overlay-right {
+  right: 0;
+  /* cursor: url("../assets/actions/arrow-right.svg"), pointer; */
+  cursor: url("../assets/actions/arrow-pointer.svg"), pointer;
+}
+.sec-lookbook-overlay.overlay-left {
+  left: 0;
+  /* cursor: url("../assets/actions/arrow-left.svg"), pointer; */
+  cursor: url("../assets/actions/arrow-pointer.svg"), pointer;
+}
+.sec-quote-image {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -380,6 +396,7 @@ footer {
   width: 33.33%;
 }
 button {
+  font-size: 14px;
   cursor: url("../assets/actions/arrow-pointer.svg"), pointer;
 }
 .image-footnote {
@@ -500,9 +517,63 @@ button {
   height: 92vh;
 }
 
+.keyboard-key {
+  color: white;
+  position: absolute;
+  height: auto;
+  top: 20px;
+  left: 20px;
+}
+.keyboard-key button {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  color: white;
+  border: none;
+  margin-bottom: 12px;
+}
+.keyboard-key button span {
+  padding-left: 20px;
+}
+.key-directional::before {
+  content: url("../assets/key-directional.svg");
+}
+.key-close::before {
+  content: url("../assets/key-esc.svg");
+}
+
+.close-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 30px;
+  color: white;
+  border: none;
+  background: none;
+  cursor: url("../assets/actions/close.svg"), pointer;
+}
+
+.close-button:hover {
+  outline: none;
+}
+
 /* MEDIA QUERIES */
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
+  video {
+    width: auto;
+  }
+  footer {
+    padding: 1em;
+  }
+  h1 {
+    padding: 0;
+    text-align: center;
+    font-size: 3em;
+  }
+  h3 {
+    font-size: 1.25em;
+  }
   .inline-image {
     width: 100%;
   }
@@ -542,21 +613,7 @@ button {
   .sec-lookbook-inner-text {
     padding: 1em;
   }
-  video {
-    width: auto;
-  }
-  footer {
-    padding: 1em;
-  }
-  h1 {
-    padding: 0;
-    text-align: center;
-    font-size: 3em;
-  }
-  h3 {
-    font-size: 1.25em;
-  }
-  a.enter-site {
+  a .enter-site {
     display: block;
   }
   .section-bottom-tear {

@@ -30,15 +30,14 @@ function fadeSplashOnScroll() {
     });
 }
 
-/* Close lookbook modal by clicking outside the modal itself */
-var modal = document.getElementById('lookbookModal');
-function displayLookBook() {
-    modal.style.display = 'flex';
-    window.addEventListener('click', (event) => {
-        if (event.target === modal) {
-            modal.style.display = 'none';
-        }
-    });
+const lookbookModal = document.getElementById('lookbook-modal');
+function closeLookbook() {
+    lookbookModal.style.display = 'none';
+}
+function lookbookInit() {
+    document.getElementById('lookbook-display').addEventListener('click', () => lookbookModal.style.display = 'flex');
+    document.getElementById('lookbook-navigate-right').addEventListener('click', () => plusDivs(1));
+    document.getElementById('lookbook-navigate-left').addEventListener('click', () => plusDivs(-1));
 }
 
 function showDivs(n) {
@@ -61,21 +60,19 @@ function plusDivs(n) {
 }
 
 function navLinkHighlightsOnScroll() {
-    window.addEventListener('DOMContentLoaded', () => {
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                const id = entry.target.getAttribute('id');
-                if (entry.intersectionRatio > 0) {
-                    document.querySelector(`.nav li a[href="#${id}"]`).classList.add('active');
-                } else {
-                    document.querySelector(`.nav li a[href="#${id}"]`).classList.remove('active');
-                }
-            });
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            const id = entry.target.getAttribute('id');
+            if (entry.intersectionRatio > 0) {
+                document.querySelector(`.nav li a[href="#${id}"]`).classList.add('active');
+            } else {
+                document.querySelector(`.nav li a[href="#${id}"]`).classList.remove('active');
+            }
         });
-        /* Track all sections that have an `id` applied */
-        document.querySelectorAll('section[id]').forEach((section) => {
-            observer.observe(section);
-        });
+    });
+    /* Track all sections that have an `id` applied */
+    document.querySelectorAll('section[id]').forEach((section) => {
+        observer.observe(section);
     });
 
     const navElem = document.querySelector('.nav li a');
@@ -132,9 +129,32 @@ function scrollToArea() {
     }
 }
 
-function hideDownloadInLookbook() {
-    var hasTouchScreen = false;
+function conditionalLookbookFeatures() {
     const lookbookDownload = document.getElementById('lookbook-download');
+    const overlayNavigators = document.getElementsByClassName('sec-lookbook-overlay');
+    const smallNavigators = document.getElementsByClassName('sec-lookbook-knob');
+    if (hasTouchScreen) {
+        /*hide download button*/
+        lookbookDownload.style.display = 'none';
+        /*hide large navigational sections*/
+        for (var item of overlayNavigators) {
+            item.style.display = 'none';
+        }
+    } else {
+        /*hide small navigational sections*/
+        for (var item of smallNavigators) {
+            item.style.display = 'none';
+        }
+        
+    }
+}
+
+var touchScreenEvaluated = false;
+var hasTouchScreen = false;
+function evaluateTouchScreen(cb) {
+    if (touchScreenEvaluated) {
+        cb();
+    }
     if ("maxTouchPoints" in navigator) {
         hasTouchScreen = navigator.maxTouchPoints > 0;
     } else if ("msMaxTouchPoints" in navigator) {
@@ -154,16 +174,27 @@ function hideDownloadInLookbook() {
             );
         }
     }
-    if (hasTouchScreen) {
-        lookbookDownload.style.display = 'none';
-    }
+    cb();
 }
 
 var slideIndex = 1;
-fadeSplashOnScroll();
-setupLookBook();
-// navLinkHighlightsOnScroll();
-triggerClipboard();
-crossFadeCoverArt();
-scrollToArea();
-hideDownloadInLookbook();
+ready(function () {
+    evaluateTouchScreen(conditionalLookbookFeatures);
+    fadeSplashOnScroll();
+    setupLookBook();
+    // navLinkHighlightsOnScroll();
+    triggerClipboard();
+    crossFadeCoverArt();
+    scrollToArea();
+    lookbookInit();
+})
+
+
+// Utility funcs
+function ready(fn) {
+    if (document.readyState != 'loading') {
+        fn();
+    } else {
+        document.addEventListener('DOMContentLoaded', fn);
+    }
+}

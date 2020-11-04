@@ -165,14 +165,21 @@
           <h3>An identity &mdash; in the true sense of the word &mdash; can not be seen.</h3>
           <p>Identities are much more than our name or appearance; they're an intangible manifestion of our backgrounds, experiences, goals, and desires. <em>Who Am I?</em>, the visual facet of Self Seekers, utilizes imagery and typography in an attempt to visually express the notions of identity and anonymity. It is best viewed while listening to the album.</p>
           <!-- Trigger the modal with a button -->
-          <button onclick="displayLookBook()" class="w3-button">Preview <span class="arrow-rotate-ne">&uarr;</span></button>
+          <button id="lookbook-display" class="w3-button">Preview <span class="arrow-rotate-ne">&uarr;</span></button>
           <a id="lookbook-download" download="SelfSeekers-Lookbook.pdf" href="assets/lookbook/JeremyFord-SelfSeekers-Lookbook.pdf"><button class="w3-button"
             style="margin-left: 20px;">Download <span class="arrow-download">&#8677;</span></button></a>
           <!-- Modal -->
-          <div id="lookbookModal" class="w3-modal">
+          <div id="lookbook-modal" class="w3-modal">
+            <div id="lookbook-navigate-right" class="sec-lookbook-overlay overlay-right"></div>
+            <div id="lookbook-navigate-left" class="sec-lookbook-overlay overlay-left"></div>
+            <div class="keyboard-key">
+              <button>Keyboard shortcuts</button>
+              <button class="key-directional"><span>navigate</span></button>
+              <button class="key-close"><span>close</span></button>
+            </div>
+            <button onclick="closeLookbook()" class="close-button">Close</button>
             <div class="w3-modal-content w3-animate-opacity">
               <div class="w3-container">
-                <!-- <span onclick="document.getElementById('lookbookModal').style.display='none'" class="w3-button w3-display-topright">&times;</span> -->
                 <div class="w3-content w3-display-container">
                   <img class="mySlides" src="assets/lookbook/lookbook-spread-1.jpg" alt="Jeremy Ford / Self Seekers lookbook">
                   <img class="mySlides" src="assets/lookbook/lookbook-spread-2.jpg" alt="Jeremy Ford / Self Seekers lookbook">
@@ -182,8 +189,8 @@
                   <img class="mySlides" src="assets/lookbook/lookbook-spread-6.jpg" alt="Jeremy Ford / Self Seekers lookbook">
                   <img class="mySlides" src="assets/lookbook/lookbook-spread-7.jpg" alt="Jeremy Ford / Self Seekers lookbook">
                   <img class="mySlides" src="assets/lookbook/lookbook-spread-8.jpg" alt="Jeremy Ford / Self Seekers lookbook">
-                  <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
-                  <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+                  <button class="w3-button w3-black w3-display-left sec-lookbook-knob" onclick="plusDivs(-1)">&#10094;</button>
+                  <button class="w3-button w3-black w3-display-right sec-lookbook-knob" onclick="plusDivs(1)">&#10095;</button>
                 </div>
               </div>
             </div>
@@ -201,7 +208,7 @@
         <h2>I, a stranger and afraid, in a world I never made.</h2>
         <p>A.E. Housman</p>
       </div>
-      <div class="lookbook-image">
+      <div class="sec-quote-image">
           <img src="assets/zine/zine-teaser-1.png" alt="Self Seekers lookbook teaser" class="inline-image">
           <img src="assets/zine/zine-teaser-2.png" alt="Self Seekers lookbook teaser" class="inline-image">
           <img src="assets/zine/zine-teaser-3.png" alt="Self Seekers lookbook teaser" class="inline-image">
