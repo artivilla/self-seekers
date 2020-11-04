@@ -6,7 +6,7 @@ html {
   scroll-behavior: smooth;
 }
 * {
-  cursor: url("../assets/arrow-pointer.svg"), auto;
+  cursor: url("../assets/actions/arrow-pointer.svg"), auto;
 }
 body {
   font-size: 1.8rem;
@@ -16,7 +16,7 @@ body {
   padding: 0;
   max-width: inherit;
   background: #1E1E1D;
-  cursor: url("../assets/arrow-pointer.svg"), auto;
+  cursor: url("../assets/actions/arrow-pointer.svg"), auto;
 }
 html, body {
   min-height: 100%;
@@ -60,7 +60,7 @@ p {
   opacity: 65%;
 }
 button, a {
-  cursor: url("../assets/arrow-pointer.svg"), auto;
+  cursor: url("../assets/actions/arrow-pointer.svg"), auto;
 }
 
 ::selection {
@@ -115,10 +115,10 @@ video {
   display: flex;
   justify-content: center;
   align-items: center;
-  cursor: url("../assets/arrow-down.svg"), pointer;
+  cursor: url("../assets/actions/arrow-down.svg"), pointer;
 }
 .logo-large img {
-  cursor: url("../assets/arrow-down.svg"), pointer;
+  cursor: url("../assets/actions/arrow-down.svg"), pointer;
 }
 .header {
   background-color: #1E1E1D;
@@ -246,7 +246,7 @@ img.animated {
   transition: 0.2s;
   text-decoration: none;
   font-family: 'Courier New Bold', Courier, sans-serif, monospace;
-  cursor: url("../assets/arrow-pointer.svg"), pointer;
+  cursor: url("../assets/actions/arrow-pointer.svg"), pointer;
   margin-bottom: 0.5em;
   padding: 0.5em;
 }
@@ -384,7 +384,7 @@ footer {
 button {
   font-family: 'Courier New Bold', Courier, sans-serif, monospace;
   font-size: inherit;
-  cursor: url("../assets/arrow-pointer.svg"), pointer;
+  cursor: url("../assets/actions/arrow-pointer.svg"), pointer;
 }
 .image-footnote {
   font-size: 0.75em;
@@ -395,7 +395,7 @@ button {
   transform: rotate(45deg);
   display: inline-block;
 }
-.arrow-download {
+.actions/arrow-download {
   transform: rotate(90deg);
   display: inline-block;
 }
@@ -432,7 +432,7 @@ button {
   background-color: rgb(30,30,29);
   background-color: rgba(30,30,29,0.9);
   align-items: center;
-  cursor: url("../assets/close.svg"), pointer;
+  cursor: url("../assets/actions/close.svg"), pointer;
 }
 .w3-modal-content {
   margin: auto;
