@@ -30,7 +30,7 @@ function fadeSplashOnScroll() {
     });
 }
 
-var lookbookModal = document.getElementById('lookbookModal');
+const lookbookModal = document.getElementById('lookbookModal');
 function closeLookbook() {
     lookbookModal.style.display = 'none';
 }
