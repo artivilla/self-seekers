@@ -30,13 +30,12 @@ function fadeSplashOnScroll() {
     });
 }
 
-const lookbookModal = document.getElementById('lookbookModal');
+const lookbookModal = document.getElementById('lookbook-modal');
 function closeLookbook() {
     lookbookModal.style.display = 'none';
 }
-
-function displayLookbook() {
-    lookbookModal.style.display = 'flex';
+function lookbookInit() {
+    document.getElementById('lookbook-display').addEventListener('click', () => lookbookModal.style.display = 'flex');
 }
 
 function showDivs(n) {
@@ -59,21 +58,19 @@ function plusDivs(n) {
 }
 
 function navLinkHighlightsOnScroll() {
-    window.addEventListener('DOMContentLoaded', () => {
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                const id = entry.target.getAttribute('id');
-                if (entry.intersectionRatio > 0) {
-                    document.querySelector(`.nav li a[href="#${id}"]`).classList.add('active');
-                } else {
-                    document.querySelector(`.nav li a[href="#${id}"]`).classList.remove('active');
-                }
-            });
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            const id = entry.target.getAttribute('id');
+            if (entry.intersectionRatio > 0) {
+                document.querySelector(`.nav li a[href="#${id}"]`).classList.add('active');
+            } else {
+                document.querySelector(`.nav li a[href="#${id}"]`).classList.remove('active');
+            }
         });
-        /* Track all sections that have an `id` applied */
-        document.querySelectorAll('section[id]').forEach((section) => {
-            observer.observe(section);
-        });
+    });
+    /* Track all sections that have an `id` applied */
+    document.querySelectorAll('section[id]').forEach((section) => {
+        observer.observe(section);
     });
 
     const navElem = document.querySelector('.nav li a');
@@ -158,10 +155,23 @@ function hideDownloadInLookbook() {
 }
 
 var slideIndex = 1;
-fadeSplashOnScroll();
-setupLookBook();
-// navLinkHighlightsOnScroll();
-triggerClipboard();
-crossFadeCoverArt();
-scrollToArea();
-hideDownloadInLookbook();
+ready(function () {
+    fadeSplashOnScroll();
+    setupLookBook();
+    // navLinkHighlightsOnScroll();
+    triggerClipboard();
+    crossFadeCoverArt();
+    scrollToArea();
+    hideDownloadInLookbook();
+    lookbookInit();
+})
+
+
+// Utility funcs
+function ready(fn) {
+    if (document.readyState != 'loading') {
+        fn();
+    } else {
+        document.addEventListener('DOMContentLoaded', fn);
+    }
+}

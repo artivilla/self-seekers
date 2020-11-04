@@ -165,15 +165,15 @@
           <h3>An identity &mdash; in the true sense of the word &mdash; can not be seen.</h3>
           <p>Identities are much more than our name or appearance; they're an intangible manifestion of our backgrounds, experiences, goals, and desires. <em>Who Am I?</em>, the visual facet of Self Seekers, utilizes imagery and typography in an attempt to visually express the notions of identity and anonymity. It is best viewed while listening to the album.</p>
           <!-- Trigger the modal with a button -->
-          <button onclick="displayLookBook()" class="w3-button">Preview <span class="arrow-rotate-ne">&uarr;</span></button>
+          <button id="lookbook-display" class="w3-button">Preview <span class="arrow-rotate-ne">&uarr;</span></button>
           <a id="lookbook-download" download="SelfSeekers-Lookbook.pdf" href="assets/lookbook/JeremyFord-SelfSeekers-Lookbook.pdf"><button class="w3-button"
             style="margin-left: 20px;">Download <span class="arrow-download">&#8677;</span></button></a>
           <!-- Modal -->
-          <div id="lookbookModal" class="w3-modal">
+          <div id="lookbook-modal" class="w3-modal">
             <div class="keyboard-helper">
               <img src="assets/keyboard shortcuts.png" alt="keyboard-helper">
             </div>
-            <button class="close-button" onclick="closeLookbook()">Close</button>
+            <button onclick="closeLookbook()" class="close-button">Close</button>
             <div class="w3-modal-content w3-animate-opacity">
               <div class="w3-container">
                 <div class="w3-content w3-display-container">
