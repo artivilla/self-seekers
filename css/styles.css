@@ -62,6 +62,14 @@ p {
 button, a {
   cursor: url("../assets/actions/arrow-pointer.svg"), auto;
 }
+video {
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
 
 ::selection {
   background-color: #93324F;
@@ -82,7 +90,6 @@ button, a {
   position: relative;
   height: 100vh;
 }
-
 .splash-screen video {
   position: absolute;
 }
@@ -98,14 +105,6 @@ button, a {
   left: 0;
   opacity: 0.4;
   pointer-events: none;
-}
-video {
-  object-fit: cover;
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  left: 0;
 }
 .splash-screen-inner {
   position: absolute;
@@ -319,7 +318,22 @@ img.animated {
   max-width: 700px;
   margin: 0 auto;
 }
-.lookbook-image {
+.sec-lookbook-overlay {
+  position: fixed;
+  z-index: -1;
+  display: none;
+  height: 100vh;
+  width: 50%;
+}
+.sec-lookbook-overlay.overlay-right {
+  right: 0;
+  cursor: url("../assets/actions/arrow-right.svg"), pointer;
+}
+.sec-lookbook-overlay.overlay-left {
+  left: 0;
+  cursor: url("../assets/actions/arrow-left.svg"), pointer;
+}
+.sec-quote-image {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -502,7 +516,7 @@ button {
 
 .keyboard-helper {
   position: absolute;
-  height: 100%;
+  height: auto;
   top: 20px;
   left: 20px;
 }
@@ -525,6 +539,20 @@ button {
 /* MEDIA QUERIES */
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
+  video {
+    width: auto;
+  }
+  footer {
+    padding: 1em;
+  }
+  h1 {
+    padding: 0;
+    text-align: center;
+    font-size: 3em;
+  }
+  h3 {
+    font-size: 1.25em;
+  }
   .inline-image {
     width: 100%;
   }
@@ -564,21 +592,7 @@ button {
   .sec-lookbook-inner-text {
     padding: 1em;
   }
-  video {
-    width: auto;
-  }
-  footer {
-    padding: 1em;
-  }
-  h1 {
-    padding: 0;
-    text-align: center;
-    font-size: 3em;
-  }
-  h3 {
-    font-size: 1.25em;
-  }
-  a.enter-site {
+  a .enter-site {
     display: block;
   }
   .section-bottom-tear {
