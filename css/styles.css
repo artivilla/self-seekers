@@ -396,6 +396,7 @@ footer {
   width: 33.33%;
 }
 button {
+  font-size: 14px;
   cursor: url("../assets/actions/arrow-pointer.svg"), pointer;
 }
 .image-footnote {
@@ -516,11 +517,29 @@ button {
   height: 92vh;
 }
 
-.keyboard-helper {
+.keyboard-key {
+  color: white;
   position: absolute;
   height: auto;
   top: 20px;
   left: 20px;
+}
+.keyboard-key button {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  color: white;
+  border: none;
+  margin-bottom: 12px;
+}
+.keyboard-key button span {
+  padding-left: 20px;
+}
+.key-directional::before {
+  content: url("../assets/key-directional.svg");
+}
+.key-close::before {
+  content: url("../assets/key-esc.svg");
 }
 
 .close-button {
