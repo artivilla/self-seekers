@@ -36,6 +36,8 @@ function closeLookbook() {
 }
 function lookbookInit() {
     document.getElementById('lookbook-display').addEventListener('click', () => lookbookModal.style.display = 'flex');
+    document.getElementById('lookbook-navigate-right').addEventListener('click', () => plusDivs(1));
+    document.getElementById('lookbook-navigate-left').addEventListener('click', () => plusDivs(-1));
 }
 
 function showDivs(n) {
@@ -127,9 +129,25 @@ function scrollToArea() {
     }
 }
 
-function hideDownloadInLookbook() {
-    var hasTouchScreen = false;
+function conditionalLookbookFeatures() {
     const lookbookDownload = document.getElementById('lookbook-download');
+    const overlayNavigations = document.getElementsByClassName('sec-lookbook-overlay');
+    if (hasTouchScreen) {
+        /*hide download button*/
+        lookbookDownload.style.display = 'none';
+        /*hide large navigational sections*/
+        for (var item of overlayNavigations) {
+            item.style.display = 'none';
+        }
+    }
+}
+
+var touchScreenEvaluated = false;
+var hasTouchScreen = false;
+function evaluateTouchScreen(cb) {
+    if (touchScreenEvaluated) {
+        cb();
+    }
     if ("maxTouchPoints" in navigator) {
         hasTouchScreen = navigator.maxTouchPoints > 0;
     } else if ("msMaxTouchPoints" in navigator) {
@@ -149,20 +167,18 @@ function hideDownloadInLookbook() {
             );
         }
     }
-    if (hasTouchScreen) {
-        lookbookDownload.style.display = 'none';
-    }
+    cb();
 }
 
 var slideIndex = 1;
 ready(function () {
+    evaluateTouchScreen(conditionalLookbookFeatures);
     fadeSplashOnScroll();
     setupLookBook();
     // navLinkHighlightsOnScroll();
     triggerClipboard();
     crossFadeCoverArt();
     scrollToArea();
-    hideDownloadInLookbook();
     lookbookInit();
 })
 
