@@ -328,12 +328,12 @@ img.animated {
 .sec-lookbook-overlay.overlay-right {
   right: 0;
   /* cursor: url("../assets/actions/arrow-right.svg"), pointer; */
-  cursor: url("../assets/actions/arrow-pointer.svg"), pointer;
+  cursor: url("../assets/actions/arrow-right.svg"), pointer;
 }
 .sec-lookbook-overlay.overlay-left {
   left: 0;
   /* cursor: url("../assets/actions/arrow-left.svg"), pointer; */
-  cursor: url("../assets/actions/arrow-pointer.svg"), pointer;
+  cursor: url("../assets/actions/arrow-left.svg"), pointer;
 }
 .sec-quote-image {
   display: flex;
