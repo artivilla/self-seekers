@@ -518,6 +518,7 @@ button {
 }
 
 .keyboard-key {
+  display: none;
   color: white;
   position: absolute;
   height: auto;
@@ -676,6 +677,9 @@ button {
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
+  .keyboard-key {
+    display: block;
+  }
   .header-inner {
     display: flex;
     justify-content: space-between;
