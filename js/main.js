@@ -53,6 +53,9 @@ function stepLookbook(e) {
     else if (e.keyCode == '39') {
         plusDivs(1);
     }
+    else if (e.keyCode == '27') {
+        closeLookbook();
+    }
 }
 
 function showDivs(n) {
