@@ -38,6 +38,21 @@ function lookbookInit() {
     document.getElementById('lookbook-display').addEventListener('click', () => lookbookModal.style.display = 'flex');
     document.getElementById('lookbook-navigate-right').addEventListener('click', () => plusDivs(1));
     document.getElementById('lookbook-navigate-left').addEventListener('click', () => plusDivs(-1));
+    document.addEventListener('keydown', e => {
+        /* change lookbook only when active  */
+        if (lookbookModal.style.display === 'flex') {
+            stepLookbook(e);
+        }
+    })   
+}
+
+function stepLookbook(e) {
+    if (e.keyCode == '37') {
+        plusDivs(-1);
+    }
+    else if (e.keyCode == '39') {
+        plusDivs(1);
+    }
 }
 
 function showDivs(n) {
