@@ -242,6 +242,9 @@ img.animated {
   margin: -41px;
   z-index: 22;
 }
+.tear-tan {
+  background: url("../assets/bg-texture-white-lighter.png") bottom right repeat, url("../assets/section-bottom-tear-tan.png") bottom no-repeat;
+}
 .platform-tile {
   background-color: rgba(224,224,216,0.2);
   max-height: 52px;
