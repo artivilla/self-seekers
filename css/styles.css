@@ -322,18 +322,15 @@ img.animated {
 .sec-lookbook-overlay {
   position: absolute;
   z-index: -1;
-  /* display: none; */
   height: 100vh;
   width: 50%;
 }
 .sec-lookbook-overlay.overlay-right {
   right: 0;
-  /* cursor: url("../assets/actions/arrow-right.svg"), pointer; */
   cursor: url("../assets/actions/arrow-right.svg"), pointer;
 }
 .sec-lookbook-overlay.overlay-left {
   left: 0;
-  /* cursor: url("../assets/actions/arrow-left.svg"), pointer; */
   cursor: url("../assets/actions/arrow-left.svg"), pointer;
 }
 .sec-quote-image {
