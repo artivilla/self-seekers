@@ -55,6 +55,8 @@ function stepLookbook(e) {
     }
     else if (e.keyCode == '27') {
         closeLookbook();
+    } else {
+        e.preventDefault();
     }
 }
 
