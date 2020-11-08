@@ -233,6 +233,15 @@ img.animated {
 .attribution p{
   font-size: 1em;
 }
+.page-tear {
+  position: absolute;
+  bottom: 0;
+  background: url("../assets/bg-texture-white-lighter.png") bottom right repeat, url("../assets/section-bottom-tear-black.png") bottom no-repeat;
+  min-height: 45px;
+  width: 103%;
+  margin: -41px;
+  z-index: 22;
+}
 .platform-tile {
   background-color: rgba(224,224,216,0.2);
   max-height: 52px;
