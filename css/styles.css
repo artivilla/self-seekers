@@ -246,6 +246,7 @@ img.animated {
   cursor: url("../assets/actions/arrow-pointer.svg"), pointer;
   margin-bottom: 0.5em;
   padding: 0.5em;
+  text-decoration: none;
 }
 .platform-tile:hover {
   opacity: 1;
