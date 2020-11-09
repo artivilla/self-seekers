@@ -175,7 +175,7 @@ img.animated {
 .nav li:not(:last-child) {
   margin-right: 20px;
 }
-/* style highlightNavOnReach() 'active' property  */
+/* styles activeNavSection()  */
 .nav li.active {
   opacity: 1;
 }
