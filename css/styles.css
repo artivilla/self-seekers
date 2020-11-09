@@ -170,21 +170,13 @@ img.animated {
   font-size: 14px;
   letter-spacing: 0.25em;
   text-transform: uppercase;
+  opacity: 0.5;
 }
 .nav li:not(:last-child) {
   margin-right: 20px;
 }
-.nav li a {
-  text-decoration: none;
-  color: #E0E0D8;
-  opacity: 0.5;
-  transition: 0.2s;
-}
-.nav li a:hover {
-  opacity: 1;
-  text-decoration: none;
-}
-.nav li a.active {
+/* styles activeNavSection()  */
+.nav li.active {
   opacity: 1;
 }
 .section-bottom-tear {
