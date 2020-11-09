@@ -79,7 +79,7 @@ function plusDivs(n) {
     showDivs(slideIndex += n);
 }
 
-function highlightNavOnReach() {
+function activeNavSection() {
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
             const id = entry.target.getAttribute('id');
@@ -198,7 +198,7 @@ ready(function () {
     evaluateTouchScreen(conditionalLookbookFeatures);
     fadeSplashOnScroll();
     setupLookBook();
-    highlightNavOnReach();
+    activeNavSection();
     triggerClipboard();
     crossFadeCoverArt();
     scrollToArea();
