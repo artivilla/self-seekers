@@ -84,8 +84,6 @@ function activeNavSection() {
         entries.forEach(entry => {
             const id = entry.target.getAttribute('id');
             if (entry.intersectionRatio > 0) {
-                const elem = document.querySelector(`.nav li[data-target="${id}"]`);
-                console.log(elem);
                 document.querySelector(`.nav li[data-target="${id}"]`).classList.add('active');
             } else {
                 document.querySelector(`.nav li[data-target="${id}"]`).classList.remove('active');
