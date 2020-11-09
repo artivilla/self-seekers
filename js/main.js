@@ -79,26 +79,22 @@ function plusDivs(n) {
     showDivs(slideIndex += n);
 }
 
-function navLinkHighlightsOnScroll() {
+function highlightNavOnReach() {
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
             const id = entry.target.getAttribute('id');
             if (entry.intersectionRatio > 0) {
-                document.querySelector(`.nav li a[href="#${id}"]`).classList.add('active');
+                const elem = document.querySelector(`.nav li[data-target="${id}"]`);
+                console.log(elem);
+                document.querySelector(`.nav li[data-target="${id}"]`).classList.add('active');
             } else {
-                document.querySelector(`.nav li a[href="#${id}"]`).classList.remove('active');
+                document.querySelector(`.nav li[data-target="${id}"]`).classList.remove('active');
             }
         });
     });
     /* Track all sections that have an `id` applied */
     document.querySelectorAll('section[id]').forEach((section) => {
         observer.observe(section);
-    });
-
-    const navElem = document.querySelector('.nav li a');
-    navElem.addEventListener('click', (event) => {
-        navElem.classList.remove('active');
-        event.target.classList.add('active');
     });
 }
 
@@ -202,7 +198,7 @@ ready(function () {
     evaluateTouchScreen(conditionalLookbookFeatures);
     fadeSplashOnScroll();
     setupLookBook();
-    // navLinkHighlightsOnScroll();
+    highlightNavOnReach();
     triggerClipboard();
     crossFadeCoverArt();
     scrollToArea();
