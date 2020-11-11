@@ -134,7 +134,9 @@ function scrollToArea() {
     }
     function handleButtonClick(e) {
         const target = e.currentTarget.getAttribute("data-target");
-        const shiftOffset = e.currentTarget.getAttribute("data-offset");
+        const smallerViewport = window.innerWidth || document.documentElement.clientWidth ||
+        document.body.clientWidth;
+        const shiftOffset = smallerViewport < 600 ? e.currentTarget.getAttribute("data-offset-xs") : e.currentTarget.getAttribute("data-offset");
         const el = document.getElementById(target)
         var offsetTop = el.offsetTop;
         if (el) {
