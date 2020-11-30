@@ -2,7 +2,7 @@
   --black: #1E1E1D;
   --white: #FFF;
   --offwhite: #E0E0D8;
-  --grey: #818181;
+  --grey: #4f4f4d;
   --red: #93324F;
   --yellow: #FFD178;
 }
@@ -63,7 +63,7 @@ h5 {
 }
 p {
   font-size: 20px;
-  opacity: 65%;
+  color: var(--grey);
 }
 button, a {
   cursor: url("../assets/actions/arrow-pointer.svg"), auto;
@@ -79,6 +79,7 @@ video {
 
 ::selection {
   background-color: var(--red);
+  color: var(--white);
 }
 .caption {
   font-size: 12px;
