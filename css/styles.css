@@ -1,3 +1,12 @@
+:root {
+  --black: #1E1E1D;
+  --white: #FFF;
+  --offwhite: #E0E0D8;
+  --grey: #4f4f4d;
+  --red: #93324F;
+  --yellow: #FFD178;
+}
+
 /* BASIC TYPOGRAPHY                       */
 /* from https://github.com/oxalorg/sakura */
 html {
@@ -15,7 +24,7 @@ body {
   margin: 0;
   padding: 0;
   max-width: inherit;
-  background: #1E1E1D;
+  background: var(--black);
   cursor: url("../assets/actions/arrow-pointer.svg"), auto;
 }
 html, body {
@@ -24,11 +33,9 @@ html, body {
 h1, h2, h3, h4, h5, h6 {
   line-height: 1.4;
   font-weight: 400;
-  color: #1E1E1D;
+  color: var(--black);
   overflow-wrap: break-word;
   word-wrap: break-word;
-  /* -ms-word-break: break-all;
-  word-break: break-word; */
   -ms-hyphens: none;
   -moz-hyphens: none;
   -webkit-hyphens: none;
@@ -39,7 +46,6 @@ h1, h2, h3, h4 {
 }
 h1 {
   font-size: 4em;
-  /* margin-bottom: 0px;  */
   word-spacing: -1em;
   margin-top: 0;
 }
@@ -57,7 +63,7 @@ h5 {
 }
 p {
   font-size: 20px;
-  opacity: 65%;
+  color: var(--grey);
 }
 button, a {
   cursor: url("../assets/actions/arrow-pointer.svg"), auto;
@@ -72,7 +78,8 @@ video {
 }
 
 ::selection {
-  background-color: #93324F;
+  background-color: var(--red);
+  color: var(--white);
 }
 .caption {
   font-size: 12px;
@@ -120,8 +127,8 @@ video {
   cursor: url("../assets/actions/arrow-down.svg"), pointer;
 }
 .header {
-  background-color: #1E1E1D;
-  color: #E0E0D8;
+  background-color: var(--black);
+  color: var(--offwhite);
   text-align: left;
   position: sticky;
   top: 0;
@@ -148,7 +155,7 @@ video {
 }
 img.static {
   width: 300px;
-  background-color: #1E1E1D;
+  background-color: var(--black);
   position: absolute;
 }
 img.static:hover {
@@ -185,7 +192,7 @@ img.animated {
   z-index: 1;
 }
 .sec-streaming {
-  background-color: #1E1E1D;
+  background-color: var(--black);
   padding: 2% 0% 8% 0%;
   position: relative;
 }
@@ -219,7 +226,7 @@ img.animated {
 }
 .attribution {
   padding: 1em 6em 0em 6em;
-  color: #FFFFFF;
+  color: var(--white);
   line-height: 0.6em;
   margin: 0 auto;
 }
@@ -252,7 +259,7 @@ img.animated {
   width: 24px;
 }
 .platform-tile span {
-  color: #E0E0D8;
+  color: var(--offwhite);
   text-align: center;
   font-size: 20px;
 }
@@ -260,7 +267,7 @@ img.animated {
   width: 12px;
 }
 .sec-about {
-  background-color: #E0E0D8;
+  background-color: var(--offwhite);
   position: relative;
   padding: 10% 0%;
 }
@@ -290,7 +297,7 @@ img.animated {
   width: 100%;
 }
 .sec-lookbook {
-  background-color: #FFFFFF;
+  background-color: var(--white);
   position: relative;
   padding: 10% 0%;
 }
@@ -333,7 +340,7 @@ img.animated {
   justify-content: space-between;
 }
 .sec-quote {
-  background-color: #FFD178;
+  background-color: var(--yellow);
 }
 .sec-quote-inner {
   padding: 10%;
@@ -347,7 +354,7 @@ img.animated {
   margin-top: 0;
 }
 footer {
-  background-color: #1E1E1D;
+  background-color: var(--black);
   font-size: 14px;
   padding: 3em 6em 3em 6em;
   margin: 0 auto;
@@ -358,7 +365,7 @@ footer {
   /* font-weight: 700; */
   letter-spacing: 0.25em;
   text-transform: uppercase;
-  color: #E0E0D8;
+  color: var(--offwhite);
 }
 .contact a {
   opacity: 0.5;
@@ -366,13 +373,13 @@ footer {
   text-decoration: none;
 }
 .contact a:link {
-  color: #E0E0D8;
+  color: var(--offwhite);
 }
 .contact a:hover {
   opacity: 1;
 }
 .contact a:visited {
-  color: #E0E0D8;
+  color: var(--offwhite);
 }
 .social {
   display: grid;
@@ -411,8 +418,8 @@ button {
   padding: 0;
   transition: 0.2s;
   font-size: 20px;
-  background-color: #FFFFFF;
-  color: #1E1E1D;
+  background-color: var(--white);
+  color: var(--black);
   padding: 0.5em 0.75em;
   border-radius: 4px;
   margin-top: 0.5em;
@@ -439,15 +446,15 @@ button {
 }
 .w3-modal-content {
   margin: auto;
-  background-color: #ffffff;
+  background-color: var(--white);
   position: relative;
   padding:0;
   outline:0;
   border-radius: 4px;
 }
 .w3-button {
-  color: #1E1E1D;
-  background-color: #E0E0D8;
+  color: var(--black);
+  background-color: var(--offwhite);
   text-decoration: none;
   font-size: 20px;
   transition: 0.2s;
