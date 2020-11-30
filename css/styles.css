@@ -123,8 +123,8 @@ video {
   align-items: center;
   cursor: url("../assets/actions/arrow-down.svg"), pointer;
 }
-.logo-large img {
-  cursor: url("../assets/actions/arrow-down.svg"), pointer;
+.logo-large, .logo-large img {
+  cursor: inherit;
 }
 .header {
   background-color: var(--black);
