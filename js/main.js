@@ -146,12 +146,9 @@ function scrollToArea() {
 }
 
 function conditionalLookbookFeatures() {
-    const lookbookDownload = document.getElementById('lookbook-download');
     const overlayNavigators = document.getElementsByClassName('sec-lookbook-overlay');
     const smallNavigators = document.getElementsByClassName('sec-lookbook-knob');
     if (hasTouchScreen) {
-        /*hide download button*/
-        lookbookDownload.style.display = 'none';
         /*hide large navigational sections*/
         for (var item of overlayNavigators) {
             item.style.display = 'none';
