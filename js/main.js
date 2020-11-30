@@ -135,10 +135,21 @@ function scrollToArea() {
         }
     }
     function handleButtonClick(e) {
-        const target = e.currentTarget.getAttribute("data-target");
-        const smallerViewport = window.innerWidth || document.documentElement.clientWidth ||
-        document.body.clientWidth;
-        const shiftOffset = smallerViewport < 600 ? e.currentTarget.getAttribute("data-offset-xs") : e.currentTarget.getAttribute("data-offset");
+        const target = e.currentTarget.getAttribute('data-target');
+        const BREAK_700 = 700;
+        const BREAK_1000 = 1000;
+        const viewport = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+        let dataOffset = e.currentTarget.getAttribute('data-offset');
+        let XSOffset = e.currentTarget.getAttribute('data-offset-xs');
+        /* defaults to desktop offset and smart selects mobile and tablets, can override with data-offset-xs attributes */
+        let shiftOffset = dataOffset;
+        if (viewport < BREAK_700) { // mobile viewports
+            shiftOffset = XSOffset ? XSOffset : dataOffset + 100;
+        } else if (viewport > BREAK_700 && viewport < BREAK_1000) { // tablet viewports
+            shiftOffset = dataOffset + 80;
+        } else {
+            shiftOffset = dataOffset;
+        }
         const el = document.getElementById(target)
         var offsetTop = el.offsetTop;
         if (el) {
