@@ -102,8 +102,17 @@ function triggerClipboard() {
     if (ClipboardJS.isSupported()) {
         new ClipboardJS('#copyEmail');
     }
-    // TODO: add delay to tooltip
-    tippy('[data-tippy-content]', { trigger: 'click' });
+    tippy('[data-tippy-content]',
+        {
+            allowHTML: true,
+            trigger: 'click mouseleave',
+            // TODO: @artivilla figure out why leaving doesn't close the tipper
+            // onTrigger(instance, e) {
+            //     if (e.type === 'mouseleave') {
+            //         instance.hide();
+            //     }
+            // },
+        });
 }
 
 function crossFadeCoverArt() {
