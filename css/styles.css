@@ -81,6 +81,9 @@ video {
   background-color: var(--red);
   color: var(--white);
 }
+::-moz-selection {
+  background-color:  #93324F;
+}
 .caption {
   font-size: 12px;
   margin: 0;
@@ -100,6 +103,11 @@ video {
   background: transparent;
   border: none;
   color: var(--white);
+}
+
+/* HIDDEN SHADOW */
+.hiddenShadow {
+  background: url("../assets/hidden-face.png") center 180px fixed no-repeat;
 }
 
 /* LAYOUT */
