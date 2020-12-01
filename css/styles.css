@@ -92,6 +92,16 @@ video {
   font-weight: 400;
 }
 
+/* THIRD PARTY STYLES */
+.tippy-content {
+  display: flex;
+}
+.tippy-content button {
+  background: transparent;
+  border: none;
+  color: var(--white);
+}
+
 /* LAYOUT */
 .splash-screen {
   position: relative;
