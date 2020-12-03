@@ -105,7 +105,7 @@ function triggerClipboard() {
     tippy('[data-tippy-content]',
         {
             allowHTML: true,
-            trigger: 'click mouseleave',
+            trigger: 'click',
             // TODO: @artivilla figure out why leaving doesn't close the tipper
             // onTrigger(instance, e) {
             //     if (e.type === 'mouseleave') {
