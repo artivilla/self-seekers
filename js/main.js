@@ -212,19 +212,6 @@ function evaluateTouchScreen(cb) {
     cb();
 }
 
-function revealShadow() {
-    let cssApplier;
-    window.addEventListener('load', () => {
-        rangy.init();
-        cssApplier = rangy.createCssClassApplier('hiddenShadow', true); // true turns on normalization
-    });
-    const aboutSection = document.getElementById('about-inner');
-    aboutSection.addEventListener('mouseup', () => {
-        cssApplier.toggleSelection();
-    })
-    
-};
-
 var slideIndex = 1;
 ready(function () {
     evaluateTouchScreen(conditionalLookbookFeatures);
@@ -235,7 +222,6 @@ ready(function () {
     crossFadeCoverArt();
     scrollToArea();
     lookbookInit();
-    revealShadow();
 })
 
 
